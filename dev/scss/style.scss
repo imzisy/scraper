@@ -1,3 +1,202 @@
-h1 {
-	font-size: 300px;
+//VARIABLE
+$blue: #34558B;
+$light: #F6F9FD;
+$light-grey: #EBECED;
+$dark: #3B424C;
+$turqoise: #42A8B3;
+$brown: #BC8875;
+$red: #E5533E;
+$font-fancy: 'Raleway', sans-serif;
+$font-fancy-bold: 800;
+$font: 'Lato', sans-serif;
+$font-bold: 700;
+$font-heavy: 900;
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+//GLOBAL
+* {
+	box-sizing: border-box;
+	&:focus { outline: none; }
+	font-size: 10px;
+	font-family: $font;
+}
+body {
+	background-color: $light;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+
+button {
+	&.outline {
+		border-radius: 3px;
+		padding: 8px;
+		border: 1px solid $light-grey;
+		background-color: transparent;
+		transition: all 0.05s ease-out;
+		opacity: 0.9;
+		margin: 0 3px;
+	}
+	&:focus { outline: none; }
+	&:hover {
+		border-color: darken($light-grey, 5%);
+		opacity: 1;
+	}
+	&:active { border-color: darken($light-grey, 20%); }
+}
+
+.icon {
+	background-repeat: no-repeat;
+	display: block;
+	content: '';
+	&.medium {
+		width: 36px;
+		height: 36px;
+		background-image: url('/img/sprite.svg');
+		&.currency { background-position: 0 0; }
+		&.gear { background-position: 0 -38px; }
+		&.gold { background-position: 0 -72px; }
+		&.petrol { background-position: 0 -144px; }
+		&.home { background-position: 0px -108px; }
+	}
+	&.utility {
+		width: 20px;
+		height: 20px;	
+		background-image: url('/img/sprite.svg');
+		&.copy { background-position: -72px 0; }
+		&.gear { background-position: -72px -20px; }
+		&.refresh { background-position: -72px -40px; }
+		&.send { background-position: -72px -60px; }
+	}
+	&.hero {
+		background-image: url('/img/sprite.svg');
+		width: 60px;
+		height: 60px;
+		background-position: -113px 0;
+	}
+}
+
+
+//DASHBOARD
+.dashboard {
+	width: 100%;
+	border-radius: 15px;
+	background-color: #FFF;
+	-webkit-box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.1);
+	-moz-box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.1);
+	box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.1);
+	&.container {
+		padding-right: 0px;
+    	padding-left: 0px;
+	}
+	> .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.graph {
+		margin-top: 30px;
+		// max-height: 250px;
+		.myChart {
+			width: 100%;
+			height: 250px;
+		}
+	}
+}
+
+//SIDEBAR
+.sidebar {
+	border-right: 2px solid $light;
+	padding: 0px;
+	.icon.hero { margin: 30px; }
+	.navigation {
+		button {
+			width: 100%;
+		    height: 110px;
+		    border: none;
+		    .icon { margin: 0 auto; }
+		    &:hover {
+		    	background-color: darken($light, 0.5%);
+		    }
+		    &.active {
+		    	background-color: $light;
+		    	border-right: 3px solid $blue;
+		    }
+		}
+	}
+}
+
+//MAIN DASHBOARD
+.main-dashboard {
+	padding: 30px;
+	.greeting {
+		color: $dark;
+		opacity: 0.5;
+		font-size: 1.4rem;
+	}
+	h2.reviewer-name {
+		color: $turqoise;
+		font-family: $font-fancy;
+		font-weight: 900;
+		font-size: 3rem;
+		margin-bottom: 25px;
+	}
+	.highlights {
+		&--box {
+			border-radius: 7px;
+			background-color: $light;
+			padding: 20px;
+			cursor: pointer;
+			transition: all 0.05s ease-out;
+			&:hover { background-color: darken($light, 2%); }
+			&__utility {
+				margin-bottom: 15px;
+				.btn-send, .btn-copy {
+					display: none;
+				}
+			}
+			.key-info {
+				font-size: 2.3rem;
+				line-height: 2.3rem;
+				font-weight: $font-bold;
+				color: $blue;
+				span {
+					font-size: 1.4rem;
+					color: $dark;
+					opacity: 0.5;
+					font-weight: 400;
+					display: block;
+				}
+			}
+		}
+		&.active {
+			.highlights--box {
+				background-color: $blue;
+				.key-info, span { color: #FFF; }
+				.icon.medium.currency { background-position: -36px -0px; }
+				.icon.medium.gold { background-position: -36px -72px; }
+				.icon.medium.petrol { background-position: -36px -144px; }
+				.icon.utility.copy { background-position: -92px 0px; }
+				.icon.utility.send { background-position: -92px -60px; }
+				.btn-send, .btn-copy { display: block; }
+			}
+		}
+	}
+}
+
+
+//Utility
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
 }
