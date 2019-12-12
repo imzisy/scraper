@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway:400,800&display=swap" rel="stylesheet">
-    
     <link rel='stylesheet' href='/css/style.css' />
   </head>
   <body>
@@ -22,21 +21,27 @@
   				<span class="greeting">Good Morning,</span>
   				<h2 class="reviewer-name">Sara de Souza</h2>
   				<div class="row highlights-section">
-  					<div class="highlights highlights__petrol col-sm-4">
+  					<div class="highlights highlights__petrol col-sm-4 active">
   						<div class="highlights--box">
   							<div class="highlights--box__utility">
                   <div class="row">
                     <div class="col-sm-12">
                       <i class="icon medium petrol float-left"></i>
                       <button class="outline btn-send float-right">
-                        <i class="icon utility send "></i>
+                        <i class="icon utility send"></i>
                       </button>
-                      <button class="outline btn-copy float-right">
-                        <i class="icon utility copy "></i>
+                      <button
+                        class="outline btn-copy float-right"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Copied!"
+                      >
+                        <i class="icon utility copy" onclick="clipboardPetrol()"></i>
                       </button>
                     </div>
                   </div>
   							</div>
+                <input type="text" value="Diesel: , RON95: , RON97: " class="hiddenClipboard" id="copyPetrol">
   							<div class="row info petrol noselect">
 	  							<div class="col-sm-4 key-info">
 	  								<span class="title-small">Diesel</span>
@@ -63,11 +68,12 @@
                         <i class="icon utility send "></i>
                       </button>
                       <button class="outline btn-copy float-right">
-                        <i class="icon utility copy "></i>
+                        <i class="icon utility copy" onclick="clipboardGold()"></i>
                       </button>
                     </div>
                   </div>
                 </div>
+                <input type="text" value="Bid: , Ask: , Change: " class="hiddenClipboard" id="copyGold">
                 <div class="row info gold noselect">
                   <div class="col-sm-4 key-info">
                     <span class="title-small">Bid</span>
@@ -91,14 +97,15 @@
                     <div class="col-sm-12">
                       <i class="icon medium currency float-left"></i>
                       <button class="outline btn-send float-right">
-                        <i class="icon utility send "></i>
+                        <i class="icon utility send"></i>
                       </button>
                       <button class="outline btn-copy float-right">
-                        <i class="icon utility copy "></i>
+                        <i class="icon utility copy" onclick="clipboardCurrency()"></i>
                       </button>
                     </div>
                   </div>
                 </div>
+                <input type="text" value="USD: , SGD: , Euro: " class="hiddenClipboard" id="copyCurrency">
                 <div class="row info currency noselect">
                   <div class="col-sm-4 key-info">
                     <span class="title-small">1USD</span>

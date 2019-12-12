@@ -4,18 +4,12 @@ $( document ).ready(function() {
     	$(this).toggleClass('active');
     });
 
-	//toggle line graph
-    // $('.highlights').click(function(){
-    // 	$(this).toggleClass('active');
-    // });
-
     //SLICK
 	$('.graph').slick({
 		dots: false,
   		infinite: false,
   		arrows: false,
 	});
-
 	$('.highlights__petrol').click(function(e) {
        e.preventDefault();
        $('.graph').slick('slickGoTo', 0);
@@ -34,6 +28,16 @@ $( document ).ready(function() {
        $('.highlights').removeClass('active');
        $(this).addClass('active');
      });
+
+	//Feedback for copy to clipboard
+	$('[data-toggle="tooltip"]').tooltip({
+		trigger: 'click',
+	});
+	$('.btn-copy').click(function(){
+		setTimeout(function() {
+	    	$('[data-toggle="tooltip"]').tooltip('hide');
+	 	}, 1000);
+	});
 
 });
 
@@ -262,3 +266,37 @@ var myCurrency = new Chart(chartCurrency, {
   }
 });
 
+//FUNCTION - COPY TO CLIPBOARD
+function clipboardPetrol() {
+  /* Get the text field */
+  var copyText = document.getElementById("copyPetrol");
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+  /* Alert the copied text */
+  console.log("Copied the text: " + copyText.value);
+}
+function clipboardGold() {
+  /* Get the text field */
+  var copyText = document.getElementById("copyGold");
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+  /* Alert the copied text */
+  console.log("Copied the text: " + copyText.value);
+}
+function clipboardCurrency() {
+  /* Get the text field */
+  var copyText = document.getElementById("copyCurrency");
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+  /* Alert the copied text */
+  console.log("Copied the text: " + copyText.value);
+}
