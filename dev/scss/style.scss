@@ -1,0 +1,299 @@
+//VARIABLE
+$blue: #34558B;
+$light: #F6F9FD;
+$light-grey: #EBECED;
+$dark: #3B424C;
+$turqoise: #42A8B3;
+$brown: #BC8875;
+$red: #E5533E;
+$font-fancy: 'Raleway', sans-serif;
+$font-fancy-bold: 800;
+$font: 'Lato', sans-serif;
+$font-bold: 700;
+$font-heavy: 900;
+
+@import url('slick.scss');
+@import url('slick-theme.scss');
+
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+//GLOBAL
+* {
+	box-sizing: border-box;
+	&:focus { outline: none; }
+	font-size: 10px;
+	font-family: $font;
+}
+body {
+	background-color: $light;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
+
+h2 {
+	color: $dark;
+	font-family: $font-fancy;
+	font-weight: 900;
+	font-size: 3rem;
+	margin-bottom: 25px;
+}
+h3 {
+	color: $blue;
+	font-family: $font-fancy;
+	font-weight: 900;
+	font-size: 1.8rem;
+	margin-bottom: 10px;
+}
+
+button {
+	transition: all 0.05s ease-out;
+	&.main {
+		background-color: $turqoise;
+		color: #FFF;
+		font-size: 1.4rem;
+		border: none;
+		border-radius: 3px;
+		padding: 10px 20px;
+		&:hover {
+			background-color: darken($turqoise, 5%);
+		}
+		&:active {
+			background-color: darken($turqoise, 10%);
+		}
+		&.small {
+			padding: 7px 10px;
+			font-size: 1.2rem;
+		}
+	}
+	&.outline {
+		border-radius: 3px;
+		padding: 8px;
+		border: 1px solid $light-grey;
+		background-color: transparent;
+		opacity: 0.9;
+		margin: 0 3px;
+	}
+	&:focus { outline: none; }
+	&:hover {
+		border-color: darken($light-grey, 5%);
+		opacity: 1;
+	}
+	&:active { border-color: darken($light-grey, 20%); }
+}
+
+.icon {
+	background-repeat: no-repeat;
+	display: block;
+	content: '';
+	&.medium {
+		width: 36px;
+		height: 36px;
+		background-image: url('/img/sprite.svg');
+		&.currency { background-position: 0 0; }
+		&.gear { background-position: 0 -38px; }
+		&.gold { background-position: 0 -72px; }
+		&.petrol { background-position: 0 -144px; }
+		&.home { background-position: 0px -108px; }
+	}
+	&.utility {
+		width: 20px;
+		height: 20px;	
+		background-image: url('/img/sprite.svg');
+		&.copy { background-position: -72px 0; }
+		&.gear { background-position: -72px -20px; }
+		&.refresh { background-position: -72px -40px; }
+		&.send { background-position: -72px -60px; }
+	}
+	&.hero {
+		background-image: url('/img/sprite.svg');
+		width: 60px;
+		height: 60px;
+		background-position: -113px 0;
+	}
+}
+
+
+//DASHBOARD
+.dashboard {
+	width: 100%;
+	border-radius: 15px;
+	background-color: #FFF;
+	-webkit-box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.1);
+	-moz-box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.1);
+	box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.1);
+	&.container {
+		padding-right: 0px;
+    	padding-left: 0px;
+	}
+	> .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.graph {
+		margin-top: 30px;
+		// max-height: 250px;
+		.myChart {
+			width: 100%;
+			height: 250px;
+		}
+	}
+}
+
+.listing {
+	&--item {
+		margin-bottom: 10px;
+		border-bottom: 1px solid $light;
+		padding-bottom: 10px;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	.listing-detail p, .listing-detail span {
+		font-size: 1.4rem;
+		color: $dark;
+		opacity: 0.7;
+		line-height: 1rem;
+	}
+	.listing-detail span {
+		font-weight: 800;
+	}
+
+	.provider-name {
+		color: $turqoise;
+		font-weight: 800;
+		font-size: 1.4rem;
+		line-height: 1.6rem;
+		margin-bottom: 10px;
+	}
+	img {
+		max-width: 80px;
+    	max-height: 35px;
+    	float: right;
+	}
+}
+
+//SIDEBAR
+.sidebar {
+	border-right: 2px solid $light;
+	padding: 0px;
+	.icon.hero { margin: 30px; }
+	.navigation {
+		button {
+			width: 100%;
+		    height: 110px;
+		    border: none;
+		    border-right: 3px solid #FFF;
+		    .icon { margin: 0 auto; }
+		    &:hover {
+		    	background-color: darken($light, 0.5%);
+		    }
+		    &.active {
+		    	background-color: $light;
+		    	border-right: 3px solid $blue;
+		    }
+		}
+	}
+}
+
+//MAIN DASHBOARD
+.main-dashboard {
+	padding: 30px;
+	.greeting {
+		color: $dark;
+		opacity: 0.5;
+		font-size: 1.4rem;
+	}
+	.highlights {
+		&--box {
+			border-radius: 7px;
+			background-color: $light;
+			padding: 20px;
+			cursor: pointer;
+			transition: all 0.05s ease-out;
+			&:hover { background-color: darken($light, 2%); }
+			&__utility {
+				margin-bottom: 15px;
+				.btn-send, .btn-copy {
+					display: none;
+				}
+			}
+			.key-info {
+				font-size: 2.3rem;
+				line-height: 2.3rem;
+				font-weight: $font-bold;
+				color: $blue;
+				span {
+					font-size: 1.4rem;
+					color: $dark;
+					opacity: 0.5;
+					font-weight: 400;
+					display: block;
+				}
+			}
+		}
+		&.active {
+			.highlights--box {
+				-webkit-box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.5);
+				-moz-box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.5);
+				box-shadow: 0px 5px 10px 0px rgba(52,85,139,0.5);
+				background-color: $blue;
+				.key-info, span { color: #FFF; }
+				.icon.medium.currency { background-position: -36px -0px; }
+				.icon.medium.gold { background-position: -36px -72px; }
+				.icon.medium.petrol { background-position: -36px -144px; }
+				.icon.utility.copy { background-position: -92px 0px; }
+				.icon.utility.send { background-position: -92px -60px; }
+				.btn-send, .btn-copy { display: block; }
+			}
+		}
+	}
+}
+
+.dashboard-settings {
+	input {
+		font-size: 1.8rem;
+	}
+	label {
+		margin-left: 10px;
+		color: $dark;
+		opacity: 0.7;
+		font-size: 1.6rem;
+	}
+	button {
+		margin-top: 30px;
+		display: inline-block;
+	}
+	.feedback-preferences {
+		font-size: 1.4rem;
+		color: $dark;
+		opacity: 0.7;
+		margin-left: 10px;
+		display: inline-block;
+	}
+}
+
+.hiddenClipboard {
+	position: absolute;
+	z-index: -999;
+}
+
+//Utility
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+.slick-slide { margin: 0 30px; }
+  /* the parent */
+.slick-list { margin: 0 -30px; }
+.slick-track { display: flex; align-items: center; }
