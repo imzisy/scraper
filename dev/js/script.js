@@ -9,6 +9,7 @@ $( document ).ready(function() {
 		dots: false,
   		infinite: false,
   		arrows: false,
+  		draggable: false,
 	});
 	$('.btn-home').click(function(e) {
        e.preventDefault();
@@ -26,6 +27,7 @@ $( document ).ready(function() {
 		dots: false,
   		infinite: false,
   		arrows: false,
+  		draggable: false,
 	});
 	$('.highlights__petrol').click(function(e) {
        e.preventDefault();
