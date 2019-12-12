@@ -12,6 +12,9 @@ $font: 'Lato', sans-serif;
 $font-bold: 700;
 $font-heavy: 900;
 
+@import url('slick.scss');
+@import url('slick-theme.scss');
+
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
 }
@@ -33,12 +36,30 @@ body {
 }
 
 button {
+	transition: all 0.05s ease-out;
+	&.main {
+		background-color: $turqoise;
+		color: #FFF;
+		font-size: 1.4rem;
+		border: none;
+		border-radius: 3px;
+		padding: 10px 20px;
+		&:hover {
+			background-color: darken($turqoise, 5%);
+		}
+		&:active {
+			background-color: darken($turqoise, 10%);
+		}
+		&.small {
+			padding: 7px 10px;
+			font-size: 1.2rem;
+		}
+	}
 	&.outline {
 		border-radius: 3px;
 		padding: 8px;
 		border: 1px solid $light-grey;
 		background-color: transparent;
-		transition: all 0.05s ease-out;
 		opacity: 0.9;
 		margin: 0 3px;
 	}
@@ -108,6 +129,39 @@ button {
 	}
 }
 
+.listing {
+	&--item {
+		margin-bottom: 10px;
+		border-bottom: 1px solid $light;
+		padding-bottom: 10px;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	.listing-detail p, .listing-detail span {
+		font-size: 1.4rem;
+		color: $dark;
+		opacity: 0.7;
+		line-height: 1rem;
+	}
+	.listing-detail span {
+		font-weight: 800;
+	}
+
+	.provider-name {
+		color: $turqoise;
+		font-weight: 800;
+		font-size: 1.4rem;
+		line-height: 1.6rem;
+		margin-bottom: 10px;
+	}
+	img {
+		max-width: 80px;
+    	max-height: 35px;
+    	float: right;
+	}
+}
+
 //SIDEBAR
 .sidebar {
 	border-right: 2px solid $light;
@@ -139,7 +193,7 @@ button {
 		font-size: 1.4rem;
 	}
 	h2.reviewer-name {
-		color: $turqoise;
+		color: $dark;
 		font-family: $font-fancy;
 		font-weight: 900;
 		font-size: 3rem;
@@ -200,3 +254,8 @@ button {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
+
+.slick-slide { margin: 0 30px; }
+  /* the parent */
+.slick-list { margin: 0 -30px; }
+.slick-track { display: flex; align-items: center; }
