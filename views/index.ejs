@@ -18,177 +18,200 @@
            </div>
         </div>
   			<div class="col-sm-10 main-dashboard">
-  				<span class="greeting">Good Morning,</span>
-  				<h2 class="reviewer-name">Sara de Souza</h2>
-  				<div class="row highlights-section">
-  					<div class="highlights highlights__petrol col-sm-4 active">
-  						<div class="highlights--box">
-  							<div class="highlights--box__utility">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <i class="icon medium petrol float-left"></i>
-                      <button class="outline btn-send float-right">
-                        <i class="icon utility send"></i>
-                      </button>
-                      <button
-                        class="outline btn-copy float-right"
-                        data-toggle="tooltip"
-                        data-placement="top"
-                        title="Copied!"
-                      >
-                        <i class="icon utility copy" onclick="clipboardPetrol()"></i>
-                      </button>
+          <!-- Dashboard -->
+          <div>
+    				<span class="greeting">Good Morning,</span>
+    				<h2 class="reviewer-name">Sara de Souza</h2>
+    				<div class="row highlights-section">
+    					<div class="highlights highlights__petrol col-sm-4 active">
+    						<div class="highlights--box">
+    							<div class="highlights--box__utility">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <i class="icon medium petrol float-left"></i>
+                        <button class="outline btn-send float-right">
+                          <i class="icon utility send"></i>
+                        </button>
+                        <button
+                          class="outline btn-copy float-right"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Copied!"
+                        >
+                          <i class="icon utility copy" onclick="clipboardPetrol()"></i>
+                        </button>
+                      </div>
+                    </div>
+    							</div>
+                  <input type="text" value="Diesel: , RON95: , RON97: " class="hiddenClipboard" id="copyPetrol">
+    							<div class="row info petrol noselect">
+  	  							<div class="col-sm-4 key-info">
+  	  								<span class="title-small">Diesel</span>
+  	  								2.18
+  	  							</div>
+  	  							<div class="col-sm-4 key-info">
+  	  								<span class="title-small">RON95</span>
+  	  								2.08
+  	  							</div>
+  	  							<div class="col-sm-4 key-info">
+  	  								<span class="title-small">RON97</span>
+  	  								2.46
+  	  							</div>
+  	  						</div>
+    						</div>
+    					</div>
+    					<div class="highlights highlights__gold col-sm-4">
+                <div class="highlights--box">
+                  <div class="highlights--box__utility">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <i class="icon medium gold float-left"></i>
+                        <button class="outline btn-send float-right">
+                          <i class="icon utility send "></i>
+                        </button>
+                        <button class="outline btn-copy float-right">
+                          <i class="icon utility copy" onclick="clipboardGold()"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
-  							</div>
-                <input type="text" value="Diesel: , RON95: , RON97: " class="hiddenClipboard" id="copyPetrol">
-  							<div class="row info petrol noselect">
-	  							<div class="col-sm-4 key-info">
-	  								<span class="title-small">Diesel</span>
-	  								2.18
-	  							</div>
-	  							<div class="col-sm-4 key-info">
-	  								<span class="title-small">RON95</span>
-	  								2.08
-	  							</div>
-	  							<div class="col-sm-4 key-info">
-	  								<span class="title-small">RON97</span>
-	  								2.46
-	  							</div>
-	  						</div>
-  						</div>
-  					</div>
-  					<div class="highlights highlights__gold col-sm-4">
-              <div class="highlights--box">
-                <div class="highlights--box__utility">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <i class="icon medium gold float-left"></i>
-                      <button class="outline btn-send float-right">
-                        <i class="icon utility send "></i>
-                      </button>
-                      <button class="outline btn-copy float-right">
-                        <i class="icon utility copy" onclick="clipboardGold()"></i>
-                      </button>
+                  <input type="text" value="Bid: , Ask: , Change: " class="hiddenClipboard" id="copyGold">
+                  <div class="row info gold noselect">
+                    <div class="col-sm-4 key-info">
+                      <span class="title-small">Bid</span>
+                      2.18
                     </div>
-                  </div>
-                </div>
-                <input type="text" value="Bid: , Ask: , Change: " class="hiddenClipboard" id="copyGold">
-                <div class="row info gold noselect">
-                  <div class="col-sm-4 key-info">
-                    <span class="title-small">Bid</span>
-                    2.18
-                  </div>
-                  <div class="col-sm-4 key-info">
-                    <span class="title-small">Ask</span>
-                    2.08
-                  </div>
-                  <div class="col-sm-4 key-info">
-                    <span class="title-small">Change</span>
-                    2.46
-                  </div>
-                </div>
-              </div>
-            </div>
-  					<div class="highlights highlights__currency col-sm-4">
-              <div class="highlights--box">
-                <div class="highlights--box__utility">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <i class="icon medium currency float-left"></i>
-                      <button class="outline btn-send float-right">
-                        <i class="icon utility send"></i>
-                      </button>
-                      <button class="outline btn-copy float-right">
-                        <i class="icon utility copy" onclick="clipboardCurrency()"></i>
-                      </button>
+                    <div class="col-sm-4 key-info">
+                      <span class="title-small">Ask</span>
+                      2.08
                     </div>
-                  </div>
-                </div>
-                <input type="text" value="USD: , SGD: , Euro: " class="hiddenClipboard" id="copyCurrency">
-                <div class="row info currency noselect">
-                  <div class="col-sm-4 key-info">
-                    <span class="title-small">1USD</span>
-                    2.18
-                  </div>
-                  <div class="col-sm-4 key-info">
-                    <span class="title-small">1SGD</span>
-                    2.08
-                  </div>
-                  <div class="col-sm-4 key-info">
-                    <span class="title-small">1Euro</span>
-                    2.46
+                    <div class="col-sm-4 key-info">
+                      <span class="title-small">Change</span>
+                      2.46
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-  				</div>
-          <div class="row graph">
-            <div>
-              <canvas id="chartPetrol"></canvas>
-            </div>
-            <div>
-              <div class="row">
-                <div class="col-sm-8">
-                  <canvas id="chartGold"></canvas>
-                </div>
-                <div class="col-sm-4 listing listing-gold">
-                  <div class="listing--item listing-gold--item">
+    					<div class="highlights highlights__currency col-sm-4">
+                <div class="highlights--box">
+                  <div class="highlights--box__utility">
                     <div class="row">
-                      <div class="provider-name col-sm-8">Kuwait Finance House Junior Gold Investment</div>
-                      <div class="provider-name col-sm-4"><img src="https://www.imoney.my/uploads/my/logos/kuwait-finance-house-logo.png"></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-9 listing-detail">
-                        <p class="buy"><span class="legend">Buy -</span> RM163.57/g</p>
-                        <p class="buy"><span class="legend">Sell -</span> RM155.44/g</p>
-                      </div>
-                      <div class="col-sm-3">
-                        <button class="cta-provider main small">Apply</button>
+                      <div class="col-sm-12">
+                        <i class="icon medium currency float-left"></i>
+                        <button class="outline btn-send float-right">
+                          <i class="icon utility send"></i>
+                        </button>
+                        <button class="outline btn-copy float-right">
+                          <i class="icon utility copy" onclick="clipboardCurrency()"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
-
-                  <div class="listing--item listing-gold--item">
-                    <div class="row">
-                      <div class="provider-name col-sm-8">Public Bank Gold Investment</div>
-                      <div class="provider-name col-sm-4"><img src="https://www.imoney.my/uploads/my/logos/Public-Bank-Logo.png"></div>
+                  <input type="text" value="USD: , SGD: , Euro: " class="hiddenClipboard" id="copyCurrency">
+                  <div class="row info currency noselect">
+                    <div class="col-sm-4 key-info">
+                      <span class="title-small">1USD</span>
+                      2.18
                     </div>
-                    <div class="row">
-                      <div class="col-sm-9 listing-detail">
-                        <p class="buy"><span class="legend">Buy -</span> RM173.97/g</p>
-                        <p class="buy"><span class="legend">Sell -</span> RM163.30/g</p>
-                      </div>
-                      <div class="col-sm-3">
-                        <button class="cta-provider main small">Apply</button>
-                      </div>
+                    <div class="col-sm-4 key-info">
+                      <span class="title-small">1SGD</span>
+                      2.08
                     </div>
-                  </div>
-
-                  <div class="listing--item listing-gold--item">
-                    <div class="row">
-                      <div class="provider-name col-sm-8">HelloGold Gold Investment</div>
-                      <div class="provider-name col-sm-4"><img src="https://www.imoney.my/uploads/logos/to_NAT.png"></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-9 listing-detail">
-                        <p class="buy"><span class="legend">Buy -</span> RM171.5/g</p>
-                        <p class="buy"><span class="legend">Sell -</span> RM168.88/g</p>
-                      </div>
-                      <div class="col-sm-3">
-                        <button class="cta-provider main small">Apply</button>
-                      </div>
+                    <div class="col-sm-4 key-info">
+                      <span class="title-small">1Euro</span>
+                      2.46
                     </div>
                   </div>
-
                 </div>
               </div>
-            </div>
-            <div>
-              <canvas id="chartCurrency"></canvas>
+    				</div>
+            <div class="row graph">
+              <div>
+                <canvas id="chartPetrol"></canvas>
+              </div>
+              <div>
+                <div class="row">
+                  <div class="col-sm-8">
+                    <canvas id="chartGold"></canvas>
+                  </div>
+                  <div class="col-sm-4 listing listing-gold">
+                    <div class="listing--item listing-gold--item">
+                      <div class="row">
+                        <div class="provider-name col-sm-8">Kuwait Finance House Junior Gold Investment</div>
+                        <div class="provider-name col-sm-4"><img src="https://www.imoney.my/uploads/my/logos/kuwait-finance-house-logo.png"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-9 listing-detail">
+                          <p class="buy"><span class="legend">Buy -</span> RM163.57/g</p>
+                          <p class="buy"><span class="legend">Sell -</span> RM155.44/g</p>
+                        </div>
+                        <div class="col-sm-3">
+                          <button class="cta-provider main small">Apply</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="listing--item listing-gold--item">
+                      <div class="row">
+                        <div class="provider-name col-sm-8">Public Bank Gold Investment</div>
+                        <div class="provider-name col-sm-4"><img src="https://www.imoney.my/uploads/my/logos/Public-Bank-Logo.png"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-9 listing-detail">
+                          <p class="buy"><span class="legend">Buy -</span> RM173.97/g</p>
+                          <p class="buy"><span class="legend">Sell -</span> RM163.30/g</p>
+                        </div>
+                        <div class="col-sm-3">
+                          <button class="cta-provider main small">Apply</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="listing--item listing-gold--item">
+                      <div class="row">
+                        <div class="provider-name col-sm-8">HelloGold Gold Investment</div>
+                        <div class="provider-name col-sm-4"><img src="https://www.imoney.my/uploads/logos/to_NAT.png"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-9 listing-detail">
+                          <p class="buy"><span class="legend">Buy -</span> RM171.5/g</p>
+                          <p class="buy"><span class="legend">Sell -</span> RM168.88/g</p>
+                        </div>
+                        <div class="col-sm-3">
+                          <button class="cta-provider main small">Apply</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div>
+                <canvas id="chartCurrency"></canvas>
+              </div>
             </div>
           </div>
-  			</div>
+          <!-- Settings -->
+          <div class="dashboard-settings">
+            <h2>Settings</h2>
+            <h3>Email Notifications</h3>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Petrol price change</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Gold price change</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label class="form-check-label" for="inlineCheckbox3">Currency exchange change</label>
+            </div>
+            <button class="btn-preferences button main">Update preferences</button>
+            <p class="feedback-preferences">Saved!</p>
+          </div>
+
+        </div>
   		</div>
 	    
     </div>

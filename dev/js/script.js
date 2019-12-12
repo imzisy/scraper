@@ -5,6 +5,23 @@ $( document ).ready(function() {
     });
 
     //SLICK
+    $('.main-dashboard').slick({
+		dots: false,
+  		infinite: false,
+  		arrows: false,
+	});
+	$('.btn-home').click(function(e) {
+       e.preventDefault();
+       $('.main-dashboard').slick('slickGoTo', 0);
+       $('.btn-sidebar').removeClass('active');
+       $(this).addClass('active');
+     });
+	$('.btn-settings').click(function(e) {
+       e.preventDefault();
+       $('.main-dashboard').slick('slickGoTo', 1);
+       $('.btn-sidebar').removeClass('active');
+       $(this).addClass('active');
+     });
 	$('.graph').slick({
 		dots: false,
   		infinite: false,
@@ -264,6 +281,13 @@ var myCurrency = new Chart(chartCurrency, {
       }]
     },
   }
+});
+
+$('.feedback-preferences').hide();
+$('.btn-preferences').click(function() {
+	$('.feedback-preferences').show().delay(1000).queue(function(n) {
+	  $(this).hide(); n();
+	});
 });
 
 //FUNCTION - COPY TO CLIPBOARD
