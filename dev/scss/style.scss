@@ -49,6 +49,18 @@ h3 {
 	font-size: 1.8rem;
 	margin-bottom: 10px;
 }
+h5 {
+	color: $dark;
+	font-family: $font-fancy;
+	font-weight: 900;
+	font-size: 1.4rem;
+	margin-bottom: 10px;
+}
+p {
+	color: $dark;
+	opacity: 0.7;
+	font-size: 1.4rem;
+}
 
 button {
 	transition: all 0.05s ease-out;
@@ -208,6 +220,19 @@ button {
 		opacity: 0.5;
 		font-size: 1.4rem;
 	}
+	.navigation-refresh {
+		display: flex;
+	    flex-wrap: nowrap;
+	    justify-content: flex-end;
+	    align-items: center;
+	    span {
+	    	color: $dark;
+	    	opacity: 0.7;
+	    	font-size: 1.2rem;
+	    	margin-right: 5px;
+	    	display: none;
+	    }
+	}
 	.highlights {
 		&--box {
 			border-radius: 7px;
@@ -256,7 +281,9 @@ button {
 
 .dashboard-settings {
 	input {
+		max-width: 50%;
 		font-size: 1.8rem;
+		&[type="email"] { margin-bottom: 20px; }
 	}
 	label {
 		margin-left: 10px;
@@ -280,6 +307,18 @@ button {
 .hiddenClipboard {
 	position: absolute;
 	z-index: -999;
+}
+
+
+//Animate
+@-moz-keyframes spin { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+.spin {
+	-webkit-animation:spin 1s linear infinite;
+    -moz-animation:spin 1s linear infinite;
+    animation:spin 1s linear infinite;
 }
 
 //Utility

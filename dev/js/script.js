@@ -58,6 +58,18 @@ $( document ).ready(function() {
 	 	}, 1000);
 	});
 
+	//Feedback for refresh button
+	$('.btn-refresh').click(function(){
+		$(this).find('.icon').addClass('spin'); //add spin animation
+		setTimeout(function() {
+	    	$('.navigation-refresh').find('span').show();
+	    	$('.btn-refresh').find('.icon').removeClass('spin'); //remove spin animation
+	 	}, 1000);
+	 	setTimeout(function() {
+	    	$('.navigation-refresh').find('span').hide();
+	 	}, 2500);
+	});
+
 });
 
 //CHART - PETROL
@@ -293,6 +305,7 @@ var myCurrency = new Chart(chartCurrency, {
   }
 });
 
+//Feedback for saving preferences on Settings page
 $('.feedback-preferences').hide();
 $('.btn-preferences').click(function() {
 	$('.feedback-preferences').show().delay(1000).queue(function(n) {
