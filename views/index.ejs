@@ -2,11 +2,30 @@
 <html>
   <head>
     <title><%= title %></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Raleway:400,800&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='/css/style.css' />
   </head>
+  <script>
+      $.get("/result", function(data, status){
+        console.log(data);
+        $("#95").html(data.petrolPrice.petrol95);
+        $("#97").html(data.petrolPrice.petrol97);
+        $("#diesel").html(data.petrolPrice.diesel);
+
+        $("#goldBid").html(data.goldPrice.goldBid);
+        $("#goldAsk").html(data.goldPrice.goldAsk);
+        $("#goldChange").html(data.goldPrice.goldChange);
+        $("#usd").html(data.currency.myrToUsd);
+        $("#sgd").html(data.currency.myrToSgd);
+        $("#euro").html(data.currency.myrToEur);
+      });
+    // });
+
+  </script>
   <body>
   	<div class="dashboard container">
   		<div class="row">
@@ -60,15 +79,15 @@
     							<div class="row info petrol noselect">
   	  							<div class="col-sm-4 key-info">
   	  								<span class="title-small">Diesel</span>
-  	  								2.18
+  	  								<p class="key-info" id="diesel" >2.08</p>
   	  							</div>
   	  							<div class="col-sm-4 key-info">
   	  								<span class="title-small">RON95</span>
-  	  								2.08
+  	  								<p class="key-info" id="95">2.08</p>
   	  							</div>
   	  							<div class="col-sm-4 key-info">
-  	  								<span class="title-small">RON97</span>
-  	  								2.46
+  	  								<span class="title-small" id="" >RON97</span>
+  	  								<p class="key-info" id="97">2.08</p>
   	  							</div>
   	  						</div>
     						</div>
@@ -92,15 +111,15 @@
                   <div class="row info gold noselect">
                     <div class="col-sm-4 key-info">
                       <span class="title-small">Bid</span>
-                      2.18
+                      <p class="key-info" id="goldBid" >2.18</p>
                     </div>
                     <div class="col-sm-4 key-info">
                       <span class="title-small">Ask</span>
-                      2.08
+                      <p class="key-info" id="goldAsk">2.08</p>
                     </div>
                     <div class="col-sm-4 key-info">
                       <span class="title-small">Change</span>
-                      2.46
+                      <p class="key-info" id="goldChange">2.46</p>
                     </div>
                   </div>
                 </div>
@@ -124,15 +143,15 @@
                   <div class="row info currency noselect">
                     <div class="col-sm-4 key-info">
                       <span class="title-small">1USD</span>
-                      2.18
+                      <p class="key-info" id="usd">2.08</p>
                     </div>
                     <div class="col-sm-4 key-info">
                       <span class="title-small">1SGD</span>
-                      2.08
+                      <p class="key-info"  id="sgd" >2.08</p>
                     </div>
                     <div class="col-sm-4 key-info">
                       <span class="title-small">1Euro</span>
-                      2.46
+                      <p class="key-info" id="euro">2.08</p>
                     </div>
                   </div>
                 </div>

@@ -36,6 +36,7 @@ const fs = require("fs");
     return element.innerHTML;
   });
 
+
   await page.goto("https://petrolpricemalaysia.info/");
 
   const petrolPrice = await page.evaluate(() => {
@@ -43,9 +44,9 @@ const fs = require("fs");
     let petrolprice2 = document.querySelector(".rpt_price_1").innerText;
     let petrolprice3 = document.querySelector(".rpt_price_2").innerText;
     return {
-      petrol95: petrolprice.replace("RM", "").trim(),
-      petrol97: petrolprice2.replace("RM", "").trim(),
-      diesel: petrolprice3.replace("RM", "").trim()
+      petrol95: petrolprice.replace("RM", ""),
+      petrol97: petrolprice2.replace("RM", ""),
+      diesel: petrolprice3.replace("RM", "")
     };
   });
 
@@ -66,20 +67,18 @@ const fs = require("fs");
 
   let goldBid = goldPrices[0].split("\n")[1].trim();
   let array2 = goldPrices[2].split("\n");
-  let goldAsk = array2[5].split(": ")[1].replace("MYR", "").trim();
-
-  console.log(goldBid,goldAsk);
+  let goldAsk = array2[5].split(": ")[1].replace("MYR", "");
 
   let result = {
     currency: {
-      myrToSgd,
-      myrToEur,
-      myrToUsd
+      myrToSgd : parseFloat(myrToSgd).toFixed(2),
+      myrToEur : parseFloat(myrToEur).toFixed(2),
+      myrToUsd : parseFloat(myrToUsd).toFixed(2)
     },
     goldPrice: {
-      goldBid,
-      goldAsk,
-      goldChange : Math.round((parseFloat(goldBid) -  parseFloat(goldAsk)) * 100) / 100
+      goldChange : Math.round((parseFloat(goldAsk) - parseFloat(goldBid)) * 100) / 100,
+      goldAsk : goldAsk,
+      goldBid : goldBid
     },
     petrolPrice
   };
