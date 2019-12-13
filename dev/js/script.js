@@ -58,6 +58,18 @@ $( document ).ready(function() {
 	 	}, 1000);
 	});
 
+	//Feedback for refresh button
+	$('.btn-refresh').click(function(){
+		$(this).find('.icon').addClass('spin'); //add spin animation
+		setTimeout(function() {
+	    	$('.navigation-refresh').find('span').show();
+	    	$('.btn-refresh').find('.icon').removeClass('spin'); //remove spin animation
+	 	}, 1000);
+	 	setTimeout(function() {
+	    	$('.navigation-refresh').find('span').hide();
+	 	}, 2500);
+	});
+
 });
 
 //CHART - PETROL
@@ -82,7 +94,8 @@ var myPetrol = new Chart(chartPetrol, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(59, 66, 76, 1)'
+        borderColor: 'rgba(59, 66, 76, 1)',
+        lineTension: 0,
     	},
       {
         label: 'RON95',
@@ -100,7 +113,8 @@ var myPetrol = new Chart(chartPetrol, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(66, 168, 179, 1)'
+        borderColor: 'rgba(66, 168, 179, 1)',
+        lineTension: 0,
     	},
     	{
         label: 'RON97',
@@ -118,7 +132,8 @@ var myPetrol = new Chart(chartPetrol, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(229, 83, 62, 1)'
+        borderColor: 'rgba(229, 83, 62, 1)',
+        lineTension: 0,
     	}
     ]
   },
@@ -163,7 +178,8 @@ var myGold = new Chart(chartGold, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(59, 66, 76, 1)'
+        borderColor: 'rgba(59, 66, 76, 1)',
+        lineTension: 0,
     	},
       {
         label: 'Sell',
@@ -181,7 +197,8 @@ var myGold = new Chart(chartGold, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(66, 168, 179, 1)'
+        borderColor: 'rgba(66, 168, 179, 1)',
+        lineTension: 0,
     	},
     ]
   },
@@ -226,7 +243,8 @@ var myCurrency = new Chart(chartCurrency, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(59, 66, 76, 1)'
+        borderColor: 'rgba(59, 66, 76, 1)',
+        lineTension: 0,
     	},
       {
         label: 'SGD',
@@ -244,7 +262,8 @@ var myCurrency = new Chart(chartCurrency, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(66, 168, 179, 1)'
+        borderColor: 'rgba(66, 168, 179, 1)',
+        lineTension: 0,
     	},
     	{
         label: 'Euro',
@@ -262,7 +281,8 @@ var myCurrency = new Chart(chartCurrency, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(229, 83, 62, 1)'
+        borderColor: 'rgba(229, 83, 62, 1)',
+        lineTension: 0,
     	}
     ]
   },
@@ -285,6 +305,7 @@ var myCurrency = new Chart(chartCurrency, {
   }
 });
 
+//Feedback for saving preferences on Settings page
 $('.feedback-preferences').hide();
 $('.btn-preferences').click(function() {
 	$('.feedback-preferences').show().delay(1000).queue(function(n) {
