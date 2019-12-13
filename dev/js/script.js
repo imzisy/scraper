@@ -82,7 +82,8 @@ var myPetrol = new Chart(chartPetrol, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(59, 66, 76, 1)'
+        borderColor: 'rgba(59, 66, 76, 1)',
+        lineTension: 0,
     	},
       {
         label: 'RON95',
@@ -100,7 +101,8 @@ var myPetrol = new Chart(chartPetrol, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(66, 168, 179, 1)'
+        borderColor: 'rgba(66, 168, 179, 1)',
+        lineTension: 0,
     	},
     	{
         label: 'RON97',
@@ -118,7 +120,8 @@ var myPetrol = new Chart(chartPetrol, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(229, 83, 62, 1)'
+        borderColor: 'rgba(229, 83, 62, 1)',
+        lineTension: 0,
     	}
     ]
   },
@@ -163,7 +166,8 @@ var myGold = new Chart(chartGold, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(59, 66, 76, 1)'
+        borderColor: 'rgba(59, 66, 76, 1)',
+        lineTension: 0,
     	},
       {
         label: 'Sell',
@@ -181,7 +185,8 @@ var myGold = new Chart(chartGold, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(66, 168, 179, 1)'
+        borderColor: 'rgba(66, 168, 179, 1)',
+        lineTension: 0,
     	},
     ]
   },
@@ -226,7 +231,8 @@ var myCurrency = new Chart(chartCurrency, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(59, 66, 76, 1)'
+        borderColor: 'rgba(59, 66, 76, 1)',
+        lineTension: 0,
     	},
       {
         label: 'SGD',
@@ -244,7 +250,8 @@ var myCurrency = new Chart(chartCurrency, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(66, 168, 179, 1)'
+        borderColor: 'rgba(66, 168, 179, 1)',
+        lineTension: 0,
     	},
     	{
         label: 'Euro',
@@ -262,7 +269,8 @@ var myCurrency = new Chart(chartCurrency, {
         ],
         showLine: true,
         fill: false,
-        borderColor: 'rgba(229, 83, 62, 1)'
+        borderColor: 'rgba(229, 83, 62, 1)',
+        lineTension: 0,
     	}
     ]
   },
