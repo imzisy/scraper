@@ -83,7 +83,7 @@ const fs = require("fs");
     petrolPrice
   };
   var json = JSON.stringify(result);
-
+  console.log(json);
   //   await fs.writeFile('myjsonfile.json', json, 'utf8');
 
   fs.writeFile("./puppeteer/result.json", json, function(err) {
